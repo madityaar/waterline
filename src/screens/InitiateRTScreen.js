@@ -47,7 +47,7 @@ const  InitiateRTScreen= ({navigation}) =>{
     const renderBox = (arrayofRT) =>{
         
         return  <View style={styles.parentBoxes}>
-                <ScrollView style= {{borderWidth:3, height:400 }}><FlatList 
+                <ScrollView nestedScrollEnabled style= {{borderWidth:3, height:400 }}><FlatList 
                     showVerticalScrollIndicator = {true}
                     scrollEnabled={true}
                     keyExtractor = {RT => RT.name}
@@ -72,8 +72,8 @@ const  InitiateRTScreen= ({navigation}) =>{
         RWs[indexRW].depthSumur = inputSumur
         return RWs
     }
-    return <View style={styles.mainMenu}>
-            <SafeAreaView>
+    return <ScrollView nestedScrollEnabled ><View style={styles.mainMenu}>
+            
             <Text>Jumlah RT: </Text>
             <TextInput 
                 keyboardType='numeric' 
@@ -136,8 +136,8 @@ const  InitiateRTScreen= ({navigation}) =>{
                     </View>
                 </Modal>
             </View>
-            </SafeAreaView>
-        </View>;
+        </View>
+        </ScrollView>;
 };
 
 const styles = StyleSheet.create({
